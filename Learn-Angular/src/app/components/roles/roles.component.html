@@ -1,0 +1,49 @@
+<p>roles works!</p>
+<div class="row">
+  <div class="col-3">
+    <p>{{firstname}}</p> <!-- 1. Interpolation using {{}}-->
+  </div>
+  <div class="col-3">
+    <p>{{version}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{currentDate}}</p>
+  </div>
+  <div class="col-3">
+    {{selectedState}}
+  </div>
+</div>
+<div class="row">
+      <div class="col-3">
+        <!--2. Property binding-->
+        <input type="text" [value]="firstname" class="form-control"/>
+      </div>
+      <div class="col-3">
+        <!--3. Two way data binding can be used in the input element-->
+        <input type="text" [(ngModel)]="firstname"/>
+      </div>
+      <!--Another two way binding using [(ngModel)]-->
+      <div class="col-3">
+        <select [(ngModel)]="selectedState">
+          <option value="Ottawa">Ottawa</option>
+          <option value="Toronto">Toronto</option>
+          <option value="Montreal">Montreal</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <!--Event binding-->
+          <button class="btn btn-success" (click)="showWelcomeAlert()">Show Alert</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success" (click)="showMessage('Welcome to React')">Show React Alert</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-success" (click)="showMessage('Welcome to Dot Net')">Show Dot Net Alert</button>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <input [type]="inputType">
+      </div>
+</div>
